@@ -1,0 +1,93 @@
+.quinta-seccion {
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 9% 5% 9%;
+    width: 100%;
+
+    .quinta-seccion-izquierda {
+        flex: 2;
+        display: grid;
+        grid-template-columns: repeat(2 ,1fr);
+        gap: 2rem;
+        justify-items: center;
+        align-items: center;
+        height: 100%;
+
+        img {
+            max-width: 100%;
+            height: 90vh;
+        }
+    }
+}
+
+/*----------Seccion Derecha-----------*/
+
+.quinta-seccion-derecha{
+    color: $gris;
+    flex: 1;
+    hr {
+        width: 30%;
+        border-color: #f1c40f;
+        margin: 0 0 10% 0;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    p {
+        margin-bottom: 8%;
+    }
+
+    a {
+        padding: 1rem 4rem;
+    }
+}
+
+.slider-frame {
+    width: 750px;
+    height: auto;
+
+    margin:100px auto 0;
+    overflow: hidden;
+    justify-content: right;
+}
+
+.slider-frame ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+    justify-content: right;
+}
+
+.slider-frame li {
+    width: 100%;
+    list-style: none;
+    justify-content: right;
+}
+
+.slider-frame img {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+}
+
+@keyframes slide {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}

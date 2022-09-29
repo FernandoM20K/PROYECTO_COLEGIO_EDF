@@ -1,0 +1,39 @@
+.tercera-seccion {
+    padding: 10% 10% 5% 10%;
+    color: $colortexto;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 4rem;
+    }
+
+    hr {
+        width: 20%;
+        border-color: $botonverde;
+    }
+
+    .tercera-seccion-contenido {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        margin-top: 4rem;
+
+        .img-tercera {
+
+            img {
+                max-width: 80vh;
+            }
+            
+            h6 {
+                margin-top: 6rem;
+                font-size: 1.3rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    a {
+        margin-top: 5%;
+        padding: 1rem 4rem;
+    }
+}

@@ -1,0 +1,38 @@
+@mixin boton($bgColor, $display, $border-radius) {
+    background-color: $bgColor;
+    color: $colortexto;
+    font-weight: bold;
+    border-radius: $border-radius;
+    text-decoration: none;
+    padding: .3rem 2rem;
+    text-align: center;
+    display: $display;
+    border: none;
+
+    &:hover {
+        background-color: darken($bgColor, 8);
+        cursor: pointer;
+    }
+}
+
+@mixin division-grid($particiones) {
+    display: grid;
+    grid-template-columns: $particiones;
+    gap: 1vw;
+}
+
+@mixin scroll($color, $colorbarra) {
+    &::-webkit-scrollbar{
+        background: $negro2;
+        width: .7rem;
+        border-radius: .5rem;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: $color;
+        border-radius: .5rem;
+        &:hover , &:active {
+            background: $colorbarra;
+        }
+    }
+}

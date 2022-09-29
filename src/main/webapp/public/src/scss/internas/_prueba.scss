@@ -1,0 +1,249 @@
+
+
+.header-1 {
+    background-color: $negro2;
+    width: 100%;
+    padding: 1vw;
+    display: grid;
+    grid-template-columns: 25% 35% 40%;
+    justify-content: center;
+
+    .logo1, .header-agregar1, .header-derecha1 {
+        height: 6vh;
+    }
+
+    .logo1 {
+        img {
+            filter: invert(100%);
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .header-agregar1 {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2%;
+    }
+
+    .header-derecha1 {
+        display: flex;
+        justify-content: flex-end;
+        gap: 3%;
+
+        
+    }
+}
+
+.dashboard-1 {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    color: aliceblue;
+}
+
+.dash1{
+    background-color: $negro2;
+    margin: 2vh 0;
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.conten {
+    color: aliceblue;
+    margin: 2vh 1vw 2vh 2vw;
+    border-radius: .5rem;
+
+    display: grid;
+    grid-template-rows: 6% 94%;
+
+    h5 {
+        background-color: $negro2;
+        border-radius: .5rem;
+        text-align: left;
+        padding: .5vh 1vw;
+    }
+
+    .conten-pag {
+        margin-top: 2.5vh;
+        background-color: $negro2;
+        border-radius: .5rem;
+    }
+}
+
+.mensaje-1 {
+    padding: 1vh 1vw;
+
+    .opciones-envio-1 {
+        margin-top: 1.5vh;
+    }
+
+    input[type="file"] {
+        width: 30vh;
+        overflow: hidden;
+    }
+
+    textarea {
+        height: 55vh;
+    }
+
+    .boton-verde-radio-inline {
+        padding: 1vh 2vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-agregar1, .header-derecha1 {
+        a {
+            padding: 1vh !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: .5rem;
+    }
+
+    .header-agregar1, .header-derecha1 {
+        a {
+            padding: 1vh !important;
+        }
+    }
+
+    .mensaje-1 {
+        .boton-verde-radio-inline {
+            padding: 1vh 1vh;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.totalz {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+}
+
+.headerz {
+    background-color: $negro2;
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
+
+    padding: 1vh 2vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logoz {
+    img {
+        max-width: 3.5vw;
+        filter: invert(100%);
+    }
+}
+
+.header-derechaz {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2%;
+
+    .boton-transparente {
+        border: .2rem solid $rosado;
+    }
+}
+
+.contenidoz {
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+}
+
+.dashz {
+    background-color: $negro2;
+    border-radius: 0 1vh 1vh 0;
+    margin: 2vh 0;
+
+    h5 {
+        color: $colortexto;
+        margin: 2vh 0;
+    }
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorz {
+    margin: 2vh .5vw 2vh 1.5vw;
+    border-radius: 1vh;
+    display: grid;
+    grid-template-rows: 7% 93%;
+}
+
+.tituloz, .informacionz {
+    background-color: $negro2;
+    border-radius: 1vh;
+}
+
+.tituloz {
+    padding: 1vh 1vw;
+    display: flex;
+    align-items: center;
+    h4 {
+        text-align: left;
+        justify-content: center;
+        color: $colortexto;
+    }
+}
+
+.informacionz {
+    margin-top: 2vh;
+    padding: 1.5vh 1vw;
+    display: grid;
+    grid-template-rows: 6% 94%;
+
+    .tabla {
+        margin-top: 2vh;
+        max-height: 70vh;
+
+        overflow: auto;
+
+        @include scroll($gris, $rosado);
+
+        &::-webkit-scrollbar:horizontal {
+            height: .7rem;
+        }
+    }
+}
+
+.funciones-profesorz {
+    color: $colortexto;
+    a {
+        display: flex;
+        align-items: center;
+    }
+    display: flex;
+    justify-content: space-between;
+}
+
+.mensajez {
+    textarea {
+        height: 48vh;
+        resize: none;
+
+        @include scroll($gris, $rosado);
+    }
+
+    .boton-verde-radio-inline {
+        padding: 1vh 3vw;
+    }
+}

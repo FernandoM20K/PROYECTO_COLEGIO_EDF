@@ -1,0 +1,35 @@
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/botones';
+@import 'base/darkmode';
+@import 'base/globales';
+//@import 'base/normalize';
+@import 'base/utilidades';
+
+/*----------Layouts-----------*/
+@import 'layouts/header';
+@import 'layouts/contacto';
+@import 'layouts/footer';
+@import 'layouts/fortalezas';
+@import 'layouts/galeria';
+@import 'layouts/testimoniales';
+@import 'layouts/ceremonia';
+@import 'layouts/login';
+@import 'layouts/inicio';
+@import 'layouts/bloqueNoticias';
+@import 'layouts/eventos';
+@import 'layouts/nosotros';
+
+/*----------Internas-----------*/
+@import 'internas/creacioncuentas';
+@import 'internas/dashboard';
+@import 'internas/listaAlumnos';
+@import 'internas/listaMensajes';
+@import 'internas/formularioMensaje';
+@import 'internas/tablanotas';
+@import 'internas/listaCursos';
+@import 'internas/prueba';
+@import 'internas/basePagina';
+@import 'internas/crearCuentas';
+@import 'internas/informacion_operacion';
+@import 'internas/listaProfesores';

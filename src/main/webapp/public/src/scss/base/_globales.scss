@@ -1,0 +1,133 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+    transition: all 0.3s ease-in-out;  
+}
+body {
+    font-family: $fuentePrincipal;
+    line-height: 1.8;
+    background-color: $gris2; /////////////////
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+        background-color: $gris2;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darken($grisOscuro, 20);
+        border-radius: .5rem;
+        width: 1rem;
+        
+        &:hover {
+            background-color: $celesteneon;
+        }
+    }
+
+    &.fijar-body {
+        overflow: hidden;
+    }
+}
+
+p {
+    font-size: 1.3rem;
+    word-spacing: 0.25em;
+    font-weight: 300;
+}
+
+.contenedor {
+    width: 95%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none !important;
+    font-size: 1.4rem;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $fuentePrincipal;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+i {
+    padding: 0 .4rem;
+}
+
+button {
+    font-weight: normal;
+}
+
+label {
+    font-size: 1rem;
+    color: $gris;
+}
+
+fieldset {
+    border: 1.2px solid $gris;
+    border-radius: .2rem;
+}
+
+legend {
+    text-shadow: 0px 0px 6px $botonverde;
+    color: lighten($botonverde, 10);
+    font-size: 1.4rem;
+}
+
+select {
+    background-color: $gris2;
+    color: $colortexto;
+}
+
+input, select, textarea {
+    padding: .5rem;
+    outline: none;
+    border: none;
+    border-radius: .4rem;
+    border: .2rem solid $negro2;
+}
+
+select:focus, input:focus, textarea:focus {
+    border: .2rem solid $botonverde;
+}
+
+.total {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 9vh 91vh;
+}

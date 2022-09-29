@@ -1,0 +1,25 @@
+.contacto {
+    background: linear-gradient(rgba(0,0,0,0.10),rgba(0,0,0,0.920)),url('../../img/fondo2.jpg') no-repeat center/cover;
+    padding: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $colortexto;
+    text-align: center;
+
+    h2 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin: 0 15%;
+    }
+
+    p {
+        font-size: 1.7rem;
+        font-weight: 400;
+        padding: 3rem 10%;
+    }
+    
+    a {
+        padding: 1rem 4rem;
+    }
+}

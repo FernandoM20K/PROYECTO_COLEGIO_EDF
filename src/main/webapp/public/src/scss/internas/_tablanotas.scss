@@ -1,0 +1,102 @@
+.notas {
+    grid-template-rows: 6% 94%;
+}
+
+.tabla-header, .tabla-body {
+    display: grid;
+    grid-template-columns: 2% 8% 15% 3.25% 3.25% 3.25% 3.25% 7% 3.25% 3.25% 3.25% 3.25% 7% 3.25% 3.25% 3.25% 3.25% 7% 8% 7%;
+
+    .ce3 {
+        border-right: 2px solid $rosado;
+    }
+    
+    .ce5 {
+        border-right: 2px solid $rosado;
+        border-left: 2px solid $rosado;
+    }
+
+    .ce6 {
+        border-right: 2px solid $rosado;
+    }
+
+    label, input, form {
+        padding: .4rem;
+        border: none;
+        outline: none;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    input {
+        background: none;
+        color: $colortexto;
+        font-size: 1.3rem;
+    }
+    
+    label {
+        font-size: 1.4rem;
+    }
+}
+
+.tabla-header {
+    background-color: $rosado;
+    border-radius: .5rem 0 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+.tabla-body {
+    background-color: $grisOscuro;
+
+    &:nth-child(2n+1) {
+        background-color: lighten($grisOscuro, 3);
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+
+        .boton-verde-radio-inline {
+            padding: .3rem;
+        }
+    }
+}
+
+@media (max-width: 1180px) {
+    .tabla-header, .tabla-body {
+        width: 130vw;
+        .ce3 {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 9;
+        }
+    }
+
+    .tabla-header {
+        .ce3 {
+            background-color: $rosado;
+        }
+    }
+
+    .tabla-body {
+        .ce3 {
+            background-color: $grisOscuro;
+        }
+        
+        &:nth-child(2n+1) {
+            .ce3 {
+                background-color: lighten($grisOscuro, 3);
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .tabla-header, .tabla-body {
+        width: 170vw;
+    }
+}

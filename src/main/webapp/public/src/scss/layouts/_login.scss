@@ -1,0 +1,30 @@
+.login {
+    grid-template-columns: 20% 80%;
+    
+
+    .header-derecha a:hover {
+        color: $botonverde;
+    }
+} /*Modificar esta Parte*/
+
+.inicio-sesion {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        font-size: 2rem;
+    }
+
+    .boton-verde-radio {
+        margin-top: 5vh;
+        padding: .5rem 4rem;
+    }
+
+    .usuario, .password {
+        width: 40%;
+        margin: 1vh 0;
+    }
+}

@@ -1,0 +1,41 @@
+.lista_mess {
+    padding: 1.5vh 1vw;
+    overflow-y: scroll;
+    height: 78vh;
+
+    @include scroll($gris, $rosado);
+}
+
+.informacion.sn-padding {
+    padding: 0;
+}
+
+.mensaje-rec {
+    border: .2rem solid $rosado;
+    display: grid;
+    grid-template-columns: 8% 92%;
+    margin: 2vh 0;
+    align-items: center;
+    &:hover {
+        border: .2rem solid darken($rosado, 50);
+    }
+
+    p, h6{
+        padding: 0 5vh;
+    }
+
+    h6 {
+        font-weight: 700;
+        margin-bottom: .5vh;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.2rem;
+        text-align: justify;
+    }
+
+    img {
+        filter: invert(100%);
+    }
+}

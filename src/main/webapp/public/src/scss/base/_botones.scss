@@ -1,0 +1,76 @@
+.boton-azul {
+    @include boton($botonazul, block, 0);
+}
+
+.boton-verde {
+    @include boton($botonverde, block, 0);
+}
+
+.boton-verde-inline {
+    @include boton($botonverde, inline-block, 0);
+}
+
+.boton-rojo {
+    @include boton($botonrojo, block, 0);
+}
+
+.boton-menu {
+    @include boton($negro2, block, 0); //////////////
+}
+
+.boton-morado {
+    @include boton($principal, block, 0);
+}
+
+.boton-transparente {
+    @include boton($negro2, block, .5rem);
+}
+
+.boton-azul-radio {
+    @include boton($botonazul, block, .5rem);
+}
+
+.boton-verde-radio {
+    @include boton($botonverde, block, .5rem);
+}
+
+.boton-rojo-radio {
+    @include boton($botonrojo, block, .5rem);
+}
+
+.boton-negro-radio {
+    @include boton($negro, block, .5rem);
+}
+
+.boton-verde-radio-inline {
+    @include boton($botonverde, inline-block, .5rem);
+}
+
+.boton-rojo-radio-inline {
+    @include boton($botonrojo, inline-block, .5rem);
+}
+
+.boton-celeste-radio-inline {
+    @include boton($celestesuave, inline-block, .5rem);
+}
+
+.boton-salmon-radio-inline {
+    @include boton($ligthsalmon, inline-block, .5rem);
+}
+
+.boton-azul-radio-inline {
+    @include boton($botonazul, inline-block, .5rem);
+}
+
+.boton-yellowgreen-radio-inline {
+    @include boton($yellowGreen, inline-block, .5rem);
+}
+
+.boton-oro-radio-inline {
+    @include boton($oro, inline-block, .5rem);
+}
+
+.boton-morado-radio-inline {
+    @include boton($principal, inline-block, .5rem);
+    padding: .5rem 1.4rem;
+}

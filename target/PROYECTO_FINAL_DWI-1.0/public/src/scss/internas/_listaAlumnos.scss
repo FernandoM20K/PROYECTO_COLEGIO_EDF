@@ -1,0 +1,99 @@
+.mensaje-export {
+    display: flex;
+    gap: 2vh;
+
+    @media (max-width: 768px) {
+        button, a {
+            padding: .3rem;
+        }
+    }
+}
+
+.tabla {
+    overflow: auto;
+    height: max-content;
+    &::-webkit-scrollbar{
+        background: $negro2;
+        width: .7rem;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: $gris;
+        border-radius: .5rem;
+        &:hover , &:active {
+            background: $rosado;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .tabla {
+        &::-webkit-scrollbar:horizontal {
+            background: $negro2;
+            height: .7rem;
+        }
+    }
+
+    table {
+        min-width: 150vw;
+
+        th {
+            background-color: $rosado;
+        }
+
+        td {
+            background-color: $grisOscuro;
+        }
+
+        th, td {
+            &:nth-child(3) {
+                position: sticky;
+                left: 0;
+            }
+        }
+
+    }
+}
+
+table {
+    text-transform: capitalize;
+    text-align: center;
+    background-color: $grisOscuro;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 5px 0px rgba(27,29,58,0.75);
+    color: $colortexto;
+
+    form {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    thead {
+        font-size: 1.4rem;
+        position: sticky;
+        top: 0;
+        z-index: 4;
+        th {
+            padding: .4rem 0;
+            text-transform: uppercase;
+            background-color: $rosado;
+        }
+    }
+
+    tbody {
+        font-size: 1.2rem;
+        tr {
+            &:nth-child(2n+1) {
+                background-color: darken($grisOscuro, 3);
+            }
+            td {
+                padding: .5rem 0 !important; 
+            }
+        }
+        
+        .boton-celeste-radio-inline, .boton-verde-radio-inline, .boton-yellowgreen-radio-inline {
+            padding: .2rem .5rem;
+        }
+    }
+}

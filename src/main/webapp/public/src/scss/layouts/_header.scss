@@ -1,0 +1,74 @@
+/*---------------------------------------------------------------------*/
+/*-------------------------HEADER USUARIO------------------------------*/
+/*---------------------------------------------------------------------*/
+.header {
+    background-color: $negro2;
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
+
+    padding: .5vh 1vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    img {
+        max-width: 3.5vw;
+        filter: invert(100%);
+    }
+}
+
+.header-derecha {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2%;
+
+    a {
+        color: $colortexto;
+    }
+
+    .boton-transparente {
+        border: .2rem solid $rosado;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 .5vw;
+
+        .opcion-derecha, .header-derecha {
+            a, button {
+                padding: .6vh .4vw;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+/*---------------------------------------------------------------------*/
+/*---------INDEX PRINCIPAL NUEVA CLASE A AGREGAR-----------------------*/
+/*---------------------------------------------------------------------*/
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: none;
+    transition: .8s ease-in-out, opacity .8s linear;
+    grid-template-columns: 20% 80%;
+
+    img {
+        filter: invert(100%);
+    }
+
+    .header-derecha a:hover {
+        color: $botonverde;
+    }
+}
+
+.header-cambio {
+    background-color: $negro2;
+}

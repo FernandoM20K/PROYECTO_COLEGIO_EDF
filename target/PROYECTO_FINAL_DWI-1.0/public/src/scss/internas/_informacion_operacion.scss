@@ -1,0 +1,21 @@
+.alerta {
+    margin-top: 1vh;
+    border-radius: .5rem;
+    color: $colortexto;
+    font-weight: bold;
+    padding: .5vh 0;
+
+    &:last-of-type {
+        margin-bottom: 3vh;
+    }
+
+    &.ms-error {
+        background-color: $botonrojo;
+    }
+
+    &.ms-correct {
+        background-color: $botonverde;
+    }
+}
+
+

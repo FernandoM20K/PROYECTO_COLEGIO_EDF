@@ -1,0 +1,47 @@
+.footer {
+    background-color: $grisOscuro;
+
+    .footer-superior {
+        .footer-contacto {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            h3 {
+                border: none;
+            }
+        }
+        
+        .redes-sociales {
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            a {
+                color: $colortexto;
+                font-size: 1.5rem;
+                border: 2px solid $colortexto;
+                padding: 1rem;
+                border-radius: 50%;
+                transition: all .3s ease-in-out;
+                img {
+                    filter: invert(100%);
+                }
+
+                &:hover {
+                    border: 2px solid $botonverde;
+                }
+            }
+        }
+    }
+    h3 {
+        margin: 0;
+        color: $colortexto;
+        text-align: center;
+        padding: 1rem 0;
+        background-color: $negro;
+        font-size: 1.4rem;
+        border-top: 1px solid $gris;
+        span {
+            color: $botonverde;
+        }
+    }
+}
