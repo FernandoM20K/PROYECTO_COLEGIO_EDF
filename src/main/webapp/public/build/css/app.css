@@ -1046,6 +1046,7 @@ h2 {
   font-weight: normal;
   display: grid;
   grid-template-columns: 10% 90%;
+  align-items: center;
 }
 .boton-menu:nth-child(1), .boton-menu:nth-child(4) {
   display: grid;
@@ -1751,6 +1752,10 @@ table tbody .boton-celeste-radio-inline, table tbody .boton-verde-radio-inline, 
   color: #FFD700;
   text-transform: uppercase;
   border: 0.2rem solid #FFD700;
+}
+
+.ml-2 {
+  margin-left: 1vw;
 }
 
 /*# sourceMappingURL=app.css.map */

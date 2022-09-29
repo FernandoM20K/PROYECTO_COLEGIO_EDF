@@ -27,8 +27,17 @@
                             <td>${sede.direccion}</td>
                             <td>${sede.telefono}</td>
                             <td>
-                                <a href="${pageContext.request.contextPath}/ServletControlador?accion=editar&idSede=${sede.idSede}" class="boton-yellowgreen-radio-inline">
-                                    <i class="fas fa-angle-double-right"> Editar</i>
+                                <a href="${pageContext.request.contextPath}/ServletControlador?accion=editar&idSede=${sede.idSede}" class="boton-yellowgreen-radio-inline ml-2">
+                                    <h4><i class="fas fa-angle-double-right">Editar</i></h4>
+                                </a>
+                                <a href="${pageContext.request.contextPath}/ServletControlador?accion=listarEstudiantes&idSede=${sede.idSede}" class="boton-azul-radio-inline ml-2">
+                                    <h4><i class="fas fa-angle-double-right"> Lista de Estudiantes</i></h4>
+                                </a>
+                                <a href="${pageContext.request.contextPath}/ServletControlador?accion=listarApoderados&idSede=${sede.idSede}" class="boton-azul-radio-inline ml-2">
+                                    <h4><i class="fas fa-angle-double-right"> Lista de Apoderados</i></h4>
+                                </a>
+                                <a href="${pageContext.request.contextPath}/ServletControlador?accion=listarProfesores&idSede=${sede.idSede}" class="boton-azul-radio-inline ml-2">
+                                    <h4><i class="fas fa-angle-double-right"> Lista de Profesores</h4></i></h4>
                                 </a>
                             </td>
                         </tr>

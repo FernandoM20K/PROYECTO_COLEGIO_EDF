@@ -26,6 +26,7 @@
     font-weight: normal;
     display: grid;
     grid-template-columns: 10% 90%;
+    align-items: center;
 
     &:nth-child(1), &:nth-child(4) {
         display: grid;

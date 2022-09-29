@@ -12,7 +12,7 @@ public class ProfesorDAO {
 
     private static final String SQL_INSERT = "INSERT INTO TB_PROFESORES(NOMBRE, APELLIDOS, DNI, GENERO, EMAIL, TELEFONO, CELULAR, DIRECCION, SUELDO) VALUES(?,?,?,?,?,?,?,?,?)";
 
-    private static final String SQL_UPDATE = "UPDATE TB_PROFESORES SET ID_PROFESOR=?, NOMBRE=?, APELLIDOS=?, DNI=?, GENERO=?, EMAIL=?, TELEFONO=?, CELULAR=?, DIRECCION=?, SUELDO=? WHERE ID_PROFESOR=?";
+    private static final String SQL_UPDATE = "UPDATE TB_PROFESORES SET NOMBRE=?, APELLIDOS=?, DNI=?, GENERO=?, EMAIL=?, TELEFONO=?, CELULAR=?, DIRECCION=?, SUELDO=? WHERE ID_PROFESOR=?";
 
     private static final String SQL_DELETE = "DELETE FROM TB_PROFESORES WHERE ID_PROFESOR=?";
 
@@ -136,7 +136,7 @@ public class ProfesorDAO {
             stmt.setString(2, profesor.getApellido());
             stmt.setString(3, profesor.getDni());
             stmt.setString(4, profesor.getGenero());
-            stmt.setString(4, profesor.getEmail());
+            stmt.setString(5, profesor.getEmail());
             stmt.setString(6, profesor.getTelefono());
             stmt.setString(7, profesor.getCelular());
             stmt.setString(8, profesor.getDireccion());

@@ -10,12 +10,13 @@
     <div class="informacion notas">
         <div class="funciones-profesor">
             <div class="mensaje-export">
-                <a href="${pageContext.request.contextPath}/ServletControladorProfesor" class="boton-rojo-radio-inline"><i class="fa-solid fa-ban"></i><h6>Cancelar</h6></a>
+                <a href="${pageContext.request.contextPath}/ServletControladorProfesor" class="boton-morado-radio-inline"><i class="fa-solid fa-ban"></i><h6>Cancelar</h6></a>
+                <a href="${pageContext.request.contextPath}/ServletControladorProfesor?accion=eliminar&idProfesor=${profesor.idProfesor}" class="boton-rojo-radio-inline"><i class="fas fa-trash"></i><h6>Eliminar Cliente</h6></a>
             </div>
         </div>
 
         <div class="tabla">
-            <form action="${pageContext.request.contextPath}/ServletControladorProfesor?accion=modifciar&idProfesor=${profesor.idProfesor}" method="post">
+            <form action="${pageContext.request.contextPath}/ServletControladorProfesor?accion=modificar&idProfesor=${profesor.idProfesor}" method="post">
                 <div class="tercios-221">
                     <div>
                         <label for="nombresProfesor">Nombres</label>
