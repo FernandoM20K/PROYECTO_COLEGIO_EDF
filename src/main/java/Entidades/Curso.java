@@ -1,24 +1,24 @@
 package Entidades;
 
-public class Cursos {
+public class Curso {
     private int idCurso;
     private String nombreCurso;
-    private String horasAcademicas;
+    private int horasAcademicas;
 
-    public Cursos() {
+    public Curso() {
 
     }
 
-    public Cursos(int idCurso) {
+    public Curso(int idCurso) {
         this.idCurso = idCurso;
     }
 
-    public Cursos(String nombreCurso, String horasAcademicas) {
+    public Curso(String nombreCurso, int horasAcademicas) {
         this.nombreCurso = nombreCurso;
         this.horasAcademicas = horasAcademicas;
     }
 
-    public Cursos(int idCurso, String nombreCurso, String horasAcademicas) {
+    public Curso(int idCurso, String nombreCurso, int horasAcademicas) {
         this.idCurso = idCurso;
         this.nombreCurso = nombreCurso;
         this.horasAcademicas = horasAcademicas;
@@ -40,11 +40,17 @@ public class Cursos {
         this.nombreCurso = nombreCurso;
     }
 
-    public String getHorasAcademicas() {
+    public int getHorasAcademicas() {
         return horasAcademicas;
     }
 
-    public void setHorasAcademicas(String horasAcademicas) {
+    public void setHorasAcademicas(int horasAcademicas) {
         this.horasAcademicas = horasAcademicas;
+    }
+
+    @Override
+    public String toString() {
+        return "Curso [horasAcademicas=" + horasAcademicas + ", idCurso=" + idCurso + ", nombreCurso=" + nombreCurso
+                + "]";
     }
 }

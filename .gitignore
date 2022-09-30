@@ -15,6 +15,7 @@
 .mtj.tmp/
 node_modules
 .vscode
+main/file
 
 # Package Files #
 *.jar

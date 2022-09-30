@@ -3,37 +3,37 @@ package Data;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import Entidades.Sede;
+import Entidades.Curso;
 
-public class SedeDAO {
-    private static final String SQL_SELECT = "SELECT ID_SEDE, DIRECCION, TELEFONO FROM TB_SEDES";
+public class CursoDAO {
+    private static final String SQL_SELECT = "SELECT ID_CURSO, NOMBRE_CURSO, HORAS_ACADEMICAS FROM TB_CURSOS";
 
-    private static final String SQL_SELECT_BY_ID = "SELECT ID_SEDE, DIRECCION, TELEFONO FROM TB_SEDES WHERE ID_SEDE = ?";
+    private static final String SQL_SELECT_BY_ID = "SELECT ID_CURSO, NOMBRE_CURSO, HORAS_ACADEMICAS FROM TB_CURSOS WHERE ID_CURSO = ?";
 
-    private static final String SQL_INSERT = "INSERT INTO TB_SEDES(DIRECCION, TELEFONO) VALUES(?,?)";
+    private static final String SQL_INSERT = "INSERT INTO TB_CURSOS(NOMBRE_CURSO, HORAS_ACADEMICAS) VALUES(?,?)";
 
-    private static final String SQL_UPDATE = "UPDATE TB_SEDES SET DIRECCION = ?, TELEFONO=? WHERE ID_SEDE=?";
+    private static final String SQL_UPDATE = "UPDATE TB_CURSOS SET NOMBRE_CURSO=?, HORAS_ACADEMICAS=? WHERE ID_CURSO=?";
 
-    private static final String SQL_DELETE = "DELETE FROM TB_SEDES WHERE ID_SEDE=?";
+    private static final String SQL_DELETE = "DELETE FROM TB_CURSOS WHERE ID_CURSO=?";
 
-    /* INICIO METODO LISTAR SEDES */
-    public List<Sede> listar() {
+    /* INICIO METODO LISTAR CURSOS */
+    public List<Curso> listar() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Sede sede = null;
-        List<Sede> sedes = new ArrayList<>();
+        Curso curso = null;
+        List<Curso> cursos = new ArrayList<>();
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while(rs.next()) {
-                int id_sede = rs.getInt("ID_SEDE");
-                String direccion = rs.getString("DIRECCION");
-                String telefono = rs.getString("TELEFONO");
+                int idCurso = rs.getInt("ID_CURSO");
+                String nombre = rs.getString("NOMBRE_CURSO");
+                int horasAcademicas = rs.getInt("HORAS_ACADEMICAS");
 
-                sede = new Sede(id_sede, direccion, telefono);
-                sedes.add(sede);
+                curso = new Curso(idCurso, nombre, horasAcademicas);
+                cursos.add(curso);
             }
         } catch (SQLException e) {
             e.printStackTrace(System.out);
@@ -43,26 +43,26 @@ public class SedeDAO {
             Conexion.close(conn);
         }
 
-        return sedes;
-    } /* FIN METODO LISTAR SEDES */
+        return cursos;
+    } /* FIN METODO LISTAR CURSOS */
 
-    /* INICIO METODO ENCONTRAR SEDES */
-    public Sede encontrar(Sede sede) {
+    /* INICIO METODO ENCONTRAR CURSOS */
+    public Curso encontrar(Curso curso) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT_BY_ID);
-            stmt.setInt(1, sede.getIdSede());
+            stmt.setInt(1, curso.getIdCurso());
             rs = stmt.executeQuery();
             rs.next(); //NOS POSICIONAMOS EN EL PRIMER REGISTRO
 
-            String direccion = rs.getString("DIRECCION");
-            String telefono = rs.getString("TELEFONO");
+            String nombre = rs.getString("NOMBRE_CURSO");
+            int horasAcademicas = rs.getInt("HORAS_ACADEMICAS");
 
-            sede.setDireccion(direccion);
-            sede.setTelefono(telefono);
+            curso.setNombreCurso(nombre);
+            curso.setHorasAcademicas(horasAcademicas);
 
         } catch (SQLException e) {
             e.printStackTrace(System.out);
@@ -71,19 +71,19 @@ public class SedeDAO {
             Conexion.close(stmt);
             Conexion.close(conn);
         }
-        return sede;
-    } /* FIN METODO ENCONTRAR SEDES */
+        return curso;
+    } /* FIN METODO ENCONTRAR CURSOS */
 
     /* INICIO METODO INSERTAR SEDE */
-    public int insertar(Sede sede) {
+    public int insertar(Curso curso) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setString(1, sede.getDireccion());
-            stmt.setString(2, sede.getTelefono());
+            stmt.setString(1, curso.getNombreCurso());
+            stmt.setInt(2, curso.getHorasAcademicas());
 
             rows = stmt.executeUpdate();
 
@@ -97,16 +97,16 @@ public class SedeDAO {
     } /* FIN METODO INSERTAR SEDE */
 
     /* INICIO METODO ACTUALIZAR SEDE */
-    public int actualizar(Sede sede) {
+    public int actualizar(Curso curso) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setString(1, sede.getDireccion());
-            stmt.setString(2, sede.getTelefono());
-            stmt.setInt(3, sede.getIdSede());
+            stmt.setString(1, curso.getNombreCurso());
+            stmt.setInt(2, curso.getHorasAcademicas());
+            stmt.setInt(3, curso.getIdCurso());
 
             rows = stmt.executeUpdate();
 
@@ -119,15 +119,15 @@ public class SedeDAO {
         return rows;
     } /* FIN METODO ACTUALIZAR SEDE */
 
-    /* INICIO METODO ELIMINAR SEDE */
-    public int eliminar(Sede sede) {
+    /* INICIO METODO ELIMINAR CLIENTE */
+    public int eliminar(Curso curso) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_DELETE);
-            stmt.setInt(1, sede.getIdSede());
+            stmt.setInt(1, curso.getIdCurso());
 
             rows = stmt.executeUpdate();
 
@@ -138,9 +138,5 @@ public class SedeDAO {
             Conexion.close(conn);
         }
         return rows;
-    } /* FIN METODO ELIMINAR SEDE */
+    } /* FIN METODO ELIMINAR CLIENTE */
 }
-
-/************************************************************************************/
-/* SEDEDAO COMPLETADO CON EXITO - PUEDEN SURGIR CAMBIOS MIENTRAS EL PROYECTO AVANCE */
-/************************************************************************************/

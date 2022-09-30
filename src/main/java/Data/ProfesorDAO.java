@@ -16,7 +16,7 @@ public class ProfesorDAO {
 
     private static final String SQL_DELETE = "DELETE FROM TB_PROFESORES WHERE ID_PROFESOR=?";
 
-    /* INICIO METODO LISTAR SEDES */
+    /* INICIO METODO LISTAR PROFESORES */
     public List<Profesor> listar() {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -51,9 +51,9 @@ public class ProfesorDAO {
         }
 
         return profesores;
-    } /* FIN METODO LISTAR SEDES */
+    } /* FIN METODO LISTAR PROFESORES */
 
-    /* INICIO METODO ENCONTRAR SEDES */
+    /* INICIO METODO ENCONTRAR PROFESOR */
     public Profesor encontrar(Profesor profesor) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -93,9 +93,9 @@ public class ProfesorDAO {
             Conexion.close(conn);
         }
         return profesor;
-    } /* FIN METODO ENCONTRAR SEDES */
+    } /* FIN METODO ENCONTRAR PROFESOR */
 
-    /* INICIO METODO INSERTAR SEDE */
+    /* INICIO METODO INSERTAR PROFESOR */
     public int insertar(Profesor profesor) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -122,9 +122,9 @@ public class ProfesorDAO {
             Conexion.close(conn);
         }
         return rows;
-    } /* FIN METODO INSERTAR SEDE */
+    } /* FIN METODO INSERTAR PROFESOR */
 
-    /* INICIO METODO ACTUALIZAR SEDE */
+    /* INICIO METODO ACTUALIZAR PROFESOR */
     public int actualizar(Profesor profesor) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -152,9 +152,9 @@ public class ProfesorDAO {
             Conexion.close(conn);
         }
         return rows;
-    } /* FIN METODO ACTUALIZAR SEDE */
+    } /* FIN METODO ACTUALIZAR PROFESOR */
 
-    /* INICIO METODO ELIMINAR CLIENTE */
+    /* INICIO METODO ELIMINAR PROFESOR */
     public int eliminar(Profesor profesor) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -173,5 +173,9 @@ public class ProfesorDAO {
             Conexion.close(conn);
         }
         return rows;
-    } /* FIN METODO ELIMINAR CLIENTE */
+    } /* FIN METODO ELIMINAR PROFESOR */
 }
+
+/****************************************************************************************/
+/* PROFESORDAO COMPLETADO CON EXITO - PUEDEN SURGIR CAMBIOS MIENTRAS EL PROYECTO AVANCE */
+/****************************************************************************************/

@@ -1,6 +1,5 @@
-Data\Conexion.class
-Entidades\Cursos.class
 Entidades\TutorEstudiante.class
+Data\SedeDAO.class
+Data\Conexion.class
 Entidades\Alumnos.class
 Controllers\ServletControladorSede.class
-Data\SedeDAO.class

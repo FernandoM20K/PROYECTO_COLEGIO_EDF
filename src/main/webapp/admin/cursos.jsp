@@ -5,34 +5,43 @@
 
 <div class="contenedord">
     <div class="titulo">
-        <h4>Lista de Alumnos</h4>
+        <h4>Lista de Cursos</h4>
     </div>
-    <div class="informacion">
-        <div class="tabla">
+    <div class="informacion notas">
+        <div class="funciones-profesor">
+            <div class="mensaje-export">
+                <a href="AgregarCurso.jsp" class="boton-verde-radio-inline"><i class="fa-solid fa-plus"></i><h6>Agregar Curso</h6></a>
+            </div>
+            
+            <h6>Total de Cursos: ${totalCursos}</h6><!--Cambiar el numero al conectar a una BD-->
+        </div>
+
+        <div class="tabla t-profesores">
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Direccion</th>
-                        <th>Telefono</th>
-                        <th>Opciones</th>
+                        <th>#</th>
+                        <th>Nombre del Curso</th>
+                        <th>Horas Academicas</th>
+                        <th>Opcion</th>
                     </tr>
                 </thead>
-
                 <tbody>
-                    <!--INICIO ITERACION DE CADA ELEMENTO DE LA LISTA DE SEDES-->
-                    <c:forEach var="sede" items="${sedes}">
+                    <!--INICIO ITERACION DE CADA ELEMENTO DE LA LISTA DE PROFESORES-->
+                    <c:forEach var="curso" items="${cursos}">
                         <tr>
-                            <td>${sede.idSede}</td>
-                            <td>${sede.direccion}</td>
-                            <td>${sede.telefono}</td>
+                            <td>${curso.idCurso}</td>
+                            <td>${curso.nombreCurso}</td>
+                            <td>${curso.horasAcademicas}</td>
                             <td>
-                                <a href="${pageContext.request.contextPath}/ServletControlador?accion=editar&idSede=${sede.idSede}" class="boton-yellowgreen-radio-inline">
-                                    <i class="fas fa-angle-double-right"> Editar</i>
+                                <a href="${pageContext.request.contextPath}/ServletControladorCurso?accion=editar&idCurso=${curso.idCurso}" class="boton-yellowgreen-radio-inline">
+                                    <h4>
+                                        <i class="fas fa-angle-double-right"> Editar</i>
+                                    </h4>
                                 </a>
                             </td>
                         </tr>
-                    </c:forEach><!--FIN ITERACION DE CADA ELEMENTO DE LA LISTA DE SEDES-->
+                    </c:forEach><!--FIN ITERACION DE CADA ELEMENTO DE LA LISTA DE PROFESORES-->
                 </tbody>
             </table>
         </div>

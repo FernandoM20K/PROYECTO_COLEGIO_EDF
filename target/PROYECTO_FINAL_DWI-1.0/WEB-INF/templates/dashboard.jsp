@@ -4,7 +4,7 @@
         <button class="boton-menu"><i class="fa-solid fa-gear"></i><h4>Mantenimiento</h4></button>
         <h4 class="helpdesk"><hr>Helpdesk<hr></h4>
         <button class="boton-menu"><i class="fa-solid fa-gear"></i><h4>Configuracion</h4><i class="fa-solid fa-angle-left"></i></button>
-        <button class="boton-menu"><i class="fa-solid fa-laptop"></i><h4>Equipos</h4></button>
+        <a href="${pageContext.request.contextPath}/ServletControladorCurso" class="boton-menu"><i class="fa-light fa-pen-paintbrush"></i><h4>Cursos</h4></a>
         <a href="${pageContext.request.contextPath}/ServletControladorSede" class="boton-menu"><i class="fa-sharp fa-solid fa-location-dot"></i><h4>Sedes</h4></a>
         <a href="${pageContext.request.contextPath}/ServletControladorProfesor" class="boton-menu"><i class="fa-sharp fa-solid fa-user-tie"></i><h4>Profesores</h4></a>
         <a href="${pageContext.request.contextPath}/ServletControladorCreacionCuentas" class="boton-menu"><i class="fa-solid fa-address-card"></i><h4>Crear Cuenta</h4></a>
