@@ -74,7 +74,7 @@ public class CursoDAO {
         return curso;
     } /* FIN METODO ENCONTRAR CURSOS */
 
-    /* INICIO METODO INSERTAR SEDE */
+    /* INICIO METODO INSERTAR CURSO */
     public int insertar(Curso curso) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -94,9 +94,9 @@ public class CursoDAO {
             Conexion.close(conn);
         }
         return rows;
-    } /* FIN METODO INSERTAR SEDE */
+    } /* FIN METODO INSERTAR CURSO */
 
-    /* INICIO METODO ACTUALIZAR SEDE */
+    /* INICIO METODO ACTUALIZAR CURSO */
     public int actualizar(Curso curso) {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -117,7 +117,7 @@ public class CursoDAO {
             Conexion.close(conn);
         }
         return rows;
-    } /* FIN METODO ACTUALIZAR SEDE */
+    } /* FIN METODO ACTUALIZAR CURSO */
 
     /* INICIO METODO ELIMINAR CLIENTE */
     public int eliminar(Curso curso) {
@@ -140,3 +140,7 @@ public class CursoDAO {
         return rows;
     } /* FIN METODO ELIMINAR CLIENTE */
 }
+
+/*************************************************************************************/
+/* CURSODAO COMPLETADO CON EXITO - PUEDEN SURGIR CAMBIOS MIENTRAS EL PROYECTO AVANCE */
+/*************************************************************************************/

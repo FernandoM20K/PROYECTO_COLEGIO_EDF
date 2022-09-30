@@ -5,7 +5,7 @@
 
 <div class="contenedord">
     <div class="titulo">
-        <h4>Lista de Profesores</h4>
+        <h4>Formulario de Agregacion de Profesores</h4>
     </div>
     <div class="informacion notas">
         <div class="funciones-profesor">

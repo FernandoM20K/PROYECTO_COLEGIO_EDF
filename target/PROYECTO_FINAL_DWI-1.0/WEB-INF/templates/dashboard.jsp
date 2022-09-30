@@ -9,7 +9,7 @@
         <a href="${pageContext.request.contextPath}/ServletControladorProfesor" class="boton-menu"><i class="fa-sharp fa-solid fa-user-tie"></i><h4>Profesores</h4></a>
         <a href="${pageContext.request.contextPath}/ServletControladorCreacionCuentas" class="boton-menu"><i class="fa-solid fa-address-card"></i><h4>Crear Cuenta</h4></a>
         <a href="${pageContext.request.contextPath}/ServletControladorMensajes" class="boton-menu"><i class="fa-solid fa-envelope"></i><h4>Mensajes</h4></a>
-        <button class="boton-menu"><i class="fa-solid fa-ticket"></i><h4>Tickets</h4></button>
+        <a href="${pageContext.request.contextPath}/ServletControladorSalon" class="boton-menu"><i class="fa-solid fa-fort"></i><h4>Salones</h4></a>
         <button class="boton-menu"><i class="fa-solid fa-calendar"></i><h4>Calendario</h4></button>
         <button class="boton-menu"><i class="fa-solid fa-list-check"></i><h4>Tareas</h4></button>
         <button class="boton-menu"><i class="fa-solid fa-list-check"></i><h4>Tareas Horarios</h4></button>

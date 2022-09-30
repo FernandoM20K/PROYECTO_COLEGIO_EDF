@@ -4,42 +4,45 @@ package Entidades;
  *
  * @author FERNANDO
  */
-public class Alumnos {
+public class Estudiante {
     private int idEstudiante;
     private String nombres;
+    private String apellidos;
     private String dni;
     private String genero;
-    private String direccionString;
+    private String direccion;
     private String fechaIngreso;
     private String fechaRetiro;
     private int idSalon;
 
-    public Alumnos() {
+    public Estudiante() {
     
     }
 
-    public Alumnos(int idEstudiante) {
+    public Estudiante(int idEstudiante) {
         this.idEstudiante = idEstudiante;
     }
 
-    public Alumnos(String nombres, String dni, String genero, String direccionString, String fechaIngreso,
-            String fechaRetiro, int idSalon) {
+    public Estudiante(String nombres, String apellidos, String dni, String genero, String direccion,
+            String fechaIngreso, String fechaRetiro, int idSalon) {
         this.nombres = nombres;
+        this.apellidos = apellidos;
         this.dni = dni;
         this.genero = genero;
-        this.direccionString = direccionString;
+        this.direccion = direccion;
         this.fechaIngreso = fechaIngreso;
         this.fechaRetiro = fechaRetiro;
         this.idSalon = idSalon;
     }
 
-    public Alumnos(int idEstudiante, String nombres, String dni, String genero, String direccionString,
+    public Estudiante(int idEstudiante, String nombres, String apellidos, String dni, String genero, String direccion,
             String fechaIngreso, String fechaRetiro, int idSalon) {
         this.idEstudiante = idEstudiante;
         this.nombres = nombres;
+        this.apellidos = apellidos;
         this.dni = dni;
         this.genero = genero;
-        this.direccionString = direccionString;
+        this.direccion = direccion;
         this.fechaIngreso = fechaIngreso;
         this.fechaRetiro = fechaRetiro;
         this.idSalon = idSalon;
@@ -61,6 +64,14 @@ public class Alumnos {
         this.nombres = nombres;
     }
 
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
     public String getDni() {
         return dni;
     }
@@ -77,12 +88,12 @@ public class Alumnos {
         this.genero = genero;
     }
 
-    public String getDireccionString() {
-        return direccionString;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDireccionString(String direccionString) {
-        this.direccionString = direccionString;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getFechaIngreso() {
@@ -107,5 +118,12 @@ public class Alumnos {
 
     public void setIdSalon(int idSalon) {
         this.idSalon = idSalon;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante [idEstudiante=" + idEstudiante + ", nombres=" + nombres + ", apellidos=" + apellidos
+                + ", dni=" + dni + ", genero=" + genero + ", direccion=" + direccion + ", fechaIngreso=" + fechaIngreso
+                + ", fechaRetiro=" + fechaRetiro + ", idSalon=" + idSalon + "]";
     }
 }

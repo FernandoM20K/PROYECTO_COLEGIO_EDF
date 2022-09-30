@@ -2,10 +2,11 @@ package Entidades;
 
 public class Salon {
     private int idSalon;
-    private int id_Sede;
+    private String codigoSalon;
+    private int idSede;
     private String grado;
     private String seccion;
-    private int nroMaxEstudiantes;
+    private int nroMax;
 
     public Salon() {
     
@@ -15,19 +16,28 @@ public class Salon {
         this.idSalon = idSalon;
     }
 
-    public Salon(int id_Sede, String grado, String seccion, int nroMaxEstudiantes) {
-        this.id_Sede = id_Sede;
+    public Salon(int idSede, String grado, String seccion, int nroMax) {
+        this.idSede = idSede;
         this.grado = grado;
         this.seccion = seccion;
-        this.nroMaxEstudiantes = nroMaxEstudiantes;
+        this.nroMax = nroMax;
     }
 
-    public Salon(int idSalon, int id_Sede, String grado, String seccion, int nroMaxEstudiantes) {
-        this.idSalon = idSalon;
-        this.id_Sede = id_Sede;
+    public Salon(String codigoSalon, int idSede, String grado, String seccion, int nroMax) {
+        this.codigoSalon = codigoSalon;
+        this.idSede = idSede;
         this.grado = grado;
         this.seccion = seccion;
-        this.nroMaxEstudiantes = nroMaxEstudiantes;
+        this.nroMax = nroMax;
+    }
+
+    public Salon(int idSalon, String codigoSalon, int idSede, String grado, String seccion, int nroMax) {
+        this.idSalon = idSalon;
+        this.codigoSalon = codigoSalon;
+        this.idSede = idSede;
+        this.grado = grado;
+        this.seccion = seccion;
+        this.nroMax = nroMax;
     }
 
     public int getIdSalon() {
@@ -38,12 +48,20 @@ public class Salon {
         this.idSalon = idSalon;
     }
 
-    public int getId_Sede() {
-        return id_Sede;
+    public String getCodigoSalon() {
+        return codigoSalon;
     }
 
-    public void setId_Sede(int id_Sede) {
-        this.id_Sede = id_Sede;
+    public void setCodigoSalon(String codigoSalon) {
+        this.codigoSalon = codigoSalon;
+    }
+
+    public int getIdSede() {
+        return idSede;
+    }
+
+    public void setIdSede(int idSede) {
+        this.idSede = idSede;
     }
 
     public String getGrado() {
@@ -62,17 +80,17 @@ public class Salon {
         this.seccion = seccion;
     }
 
-    public int getNroMaxEstudiantes() {
-        return nroMaxEstudiantes;
+    public int getNroMax() {
+        return nroMax;
     }
 
-    public void setNroMaxEstudiantes(int nroMaxEstudiantes) {
-        this.nroMaxEstudiantes = nroMaxEstudiantes;
+    public void setNroMax(int nroMax) {
+        this.nroMax = nroMax;
     }
 
     @Override
     public String toString() {
-        return "Salon [idSalon=" + idSalon + ", id_Sede=" + id_Sede + ", grado=" + grado + ", seccion=" + seccion
-                + ", nroMaxEstudiantes=" + nroMaxEstudiantes + "]";
+        return "SalonDAO [idSalon=" + idSalon + ", codigoSalon=" + codigoSalon + ", idSede=" + idSede + ", grado="
+                + grado + ", seccion=" + seccion + ", nroMax=" + nroMax + "]";
     }
 }
