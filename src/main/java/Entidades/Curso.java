@@ -2,7 +2,7 @@ package Entidades;
 
 public class Curso {
     private int idCurso;
-    private String nombreCurso;
+    private String nombre;
     private int horasAcademicas;
 
     public Curso() {
@@ -13,14 +13,14 @@ public class Curso {
         this.idCurso = idCurso;
     }
 
-    public Curso(String nombreCurso, int horasAcademicas) {
-        this.nombreCurso = nombreCurso;
+    public Curso(String nombre, int horasAcademicas) {
+        this.nombre = nombre;
         this.horasAcademicas = horasAcademicas;
     }
 
-    public Curso(int idCurso, String nombreCurso, int horasAcademicas) {
+    public Curso(int idCurso, String nombre, int horasAcademicas) {
         this.idCurso = idCurso;
-        this.nombreCurso = nombreCurso;
+        this.nombre = nombre;
         this.horasAcademicas = horasAcademicas;
     }
 
@@ -32,12 +32,12 @@ public class Curso {
         this.idCurso = idCurso;
     }
 
-    public String getNombreCurso() {
-        return nombreCurso;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCurso(String nombreCurso) {
-        this.nombreCurso = nombreCurso;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getHorasAcademicas() {
@@ -50,7 +50,7 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso [horasAcademicas=" + horasAcademicas + ", idCurso=" + idCurso + ", nombreCurso=" + nombreCurso
+        return "Curso [horasAcademicas=" + horasAcademicas + ", idCurso=" + idCurso + ", nombre=" + nombre
                 + "]";
     }
 }

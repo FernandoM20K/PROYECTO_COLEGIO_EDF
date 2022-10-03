@@ -8,12 +8,12 @@
     <div class="informacion notas">
         <div class="funciones-profesor">
             <div class="mensaje-export">
-                <a href="${pageContext.request.contextPath}/ServletControladorProfesor" class="boton-rojo-radio-inline"><i class="fa-solid fa-ban"></i><h6>Cancelar</h6></a>
+                <a href="${pageContext.request.contextPath}/ServletControladorEstudiante" class="boton-rojo-radio-inline"><i class="fa-solid fa-ban"></i><h6>Cancelar</h6></a>
             </div>
         </div>
 
         <div class="tabla">
-            <form action="${pageContext.request.contextPath}/ServletControladorProfesor?accion=insertar" method="post">
+            <form action="${pageContext.request.contextPath}/ServletControladorEstudiante?accion=insertar" method="post">
                 <!-- <h6 class="alerta ms-error">INFORMACION DE ERROR</h6>
                 <h6 class="alerta ms-error">INFORMACION DE ERROR</h6>
                 <h6 class="alerta ms-error">INFORMACION DE ERROR</h6>
@@ -22,13 +22,13 @@
 
                 <div class="mitad">
                     <div class="datos-rojo">
-                        <label for="nombre-es">Nombres*</label>
-                        <input type="text" id="nombre-es" class="block-100">
+                        <label for="nombres">Nombres*</label>
+                        <input type="text" id="nombres" name="nombres" class="block-100" required>
                     </div>
 
                     <div class="datos-rojo">
-                        <label for="apellido-es">Apellidos*</label>
-                        <input type="text" id="apellido-es" class="block-100">
+                        <label for="apellidos">Apellidos*</label>
+                        <input type="text" id="apellidos" name="apellidos" class="block-100" required>
                     </div>
                 </div>
 
@@ -36,52 +36,43 @@
                     <fieldset>
                         <legend>Datos del Estudiante</legend>
                         <div class="sede">
-                            <label for="sede">Sede</label>
-                            <select id="sede" class="block-100">
+                            <label for="idSede">Sede</label>
+                            <select id="idSede" name="idSede" class="block-100" required>
                                 <option selected value=""></option>
-                                <option value="1">Sede Lima</option>
-                                <option value="2">Sede Ica</option>
-                                <option value="3">Sede Ayacucho</option>
-                                <option value="4">D</option>
-                                <option value="5">E</option>
-                                <option value="6">F</option>
-                                <option value="5">G</option>
-                                <option value="6">H</option>
+                                <!--INICIO ITERACION DE CADA ELEMENTO DE LA LISTA DE SEDES-->
+                                <c:forEach var="sede" items="${sedes}">
+                                    <option value="${sede.idSede}">${sede.nombre}</option>
+                                </c:forEach><!--FIN ITERACION DE CADA ELEMENTO DE LA LISTA DE SEDES-->
                             </select>
                         </div>
                         
                         <div>
                             <label for="edad">Edad</label>
-                            <input type="number" id="edad" class="block-100" min="11">
-                        </div>
-
-                        <div>
-                            <label for="nacionalidad">Nacionalidad</label>
-                            <input type="text" id="nacionalidad" class="block-100">
+                            <input type="number" id="edad" name="edad" class="block-100" min="11" required>
                         </div>
 
                         <div>
                             <label for="direccion">Direccion</label>
-                            <input type="text" id="direccion" class="block-100" min="11">
+                            <input type="text" id="direccion" name="direccion" class="block-100" min="11" required>
                         </div>
 
                         <div>
-                            <label for="sexo">Sexo</label>
-                            <select id="sexo" class="block-100">
+                            <label for="genero">Genero</label>
+                            <select id="genero" name="genero" class="block-100" required>
                                 <option selected value=""></option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
                             </select>
                         </div>
 
                         <div>
-                            <label for="identificacion">DNI / CE</label>
-                            <input type="number" id="identificacion" class="block-100">
+                            <label for="dni">DNI</label>
+                            <input type="number" id="dni" name="dni" class="block-100" required>
                         </div>
 
                         <div>
                             <label for="fechaIngreso">Fecha Ingreso</label>
-                            <input type="date" id="fechaIngreso" class="block-100">
+                            <input type="date" id="fechaIngreso" name="fechaIngreso" class="block-100" required>
                         </div>
                     </fieldset>
                 </div>

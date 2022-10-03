@@ -10,7 +10,7 @@
     <div class="informacion notas">
         <div class="funciones-profesor">
             <div class="mensaje-export">
-                <a href="AgregarCurso.jsp" class="boton-verde-radio-inline"><i class="fa-solid fa-plus"></i><h6>Agregar Curso</h6></a>
+                <a href="agregarCurso.jsp" class="boton-verde-radio-inline"><i class="fa-solid fa-plus"></i><h6>Agregar Curso</h6></a>
             </div>
             
             <h6>Total de Cursos: ${totalCursos}</h6><!--Cambiar el numero al conectar a una BD-->
@@ -31,7 +31,7 @@
                     <c:forEach var="curso" items="${cursos}">
                         <tr>
                             <td>${curso.idCurso}</td>
-                            <td>${curso.nombreCurso}</td>
+                            <td>${curso.nombre}</td>
                             <td>${curso.horasAcademicas}</td>
                             <td>
                                 <a href="${pageContext.request.contextPath}/ServletControladorCurso?accion=editar&idCurso=${curso.idCurso}" class="boton-yellowgreen-radio-inline">

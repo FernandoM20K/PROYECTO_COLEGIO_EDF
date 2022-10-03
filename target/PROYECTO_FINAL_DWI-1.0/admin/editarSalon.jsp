@@ -11,11 +11,12 @@
         <div class="funciones-profesor">
             <div class="mensaje-export">
                 <a href="${pageContext.request.contextPath}/ServletControladorSalon" class="boton-rojo-radio-inline"><i class="fa-solid fa-ban"></i><h6>Cancelar</h6></a>
+                <a href="${pageContext.request.contextPath}/ServletControladorSalon?accion=eliminar&idSalon=${salon.idSalon}" class="boton-rojo-radio-inline"><i class="fas fa-trash"></i><h6>Eliminar Salon</h6></a>
             </div>
         </div>
 
         <div class="tabla">
-            <form action="${pageContext.request.contextPath}/ServletControladorSalon?accion=insertar" method="post">
+            <form action="${pageContext.request.contextPath}/ServletControladorSalon?accion=modificar&idSalon=${salon.idSalon}" method="post">
                 <div>
                     <label for="sede">Sede</label>
                     <select id="sede" name="sede" class="block-100" required>
@@ -29,17 +30,17 @@
 
                 <div>
                     <label for="grado">Grado</label>
-                    <input type="number" id="grado" name="grado" class="block-100" required>
+                    <input type="number" id="grado" name="grado" class="block-100" required value="${sede.grado}">
                 </div>
 
                 <div>
                     <label for="seccion">Seccion</label>
-                    <input type="text" id="seccion" name="seccion" class="block-100" required>
+                    <input type="text" id="seccion" name="seccion" class="block-100" required value="${sede.seccion}">
                 </div>
 
                 <div>
                     <label for="nroMax">Numero Maximo de Estudiantes</label>
-                    <input type="number" id="nroMax" name="nroMax" class="block-100" required>
+                    <input type="number" id="nroMax" name="nroMax" class="block-100" required value="${sede.nroMax}">
                 </div>
     
                 <div class="cont-registro">

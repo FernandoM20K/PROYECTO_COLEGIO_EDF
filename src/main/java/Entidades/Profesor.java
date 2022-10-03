@@ -11,6 +11,10 @@ public class Profesor {
     private String celular;
     private String direccion;
     private double sueldo;
+    private int idSede;
+    private String nombreSede;
+    private int idCurso;
+    private String nombreCurso;
 
     public Profesor() {
     
@@ -21,7 +25,7 @@ public class Profesor {
     }
 
     public Profesor(String nombre, String apellido, String dni, String genero, String email, String telefono,
-            String celular, String direccion, double sueldo) {
+            String celular, String direccion, double sueldo, int idSede, int idCurso) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -31,10 +35,14 @@ public class Profesor {
         this.celular = celular;
         this.direccion = direccion;
         this.sueldo = sueldo;
+        this.idSede = idSede;
+        this.idCurso = idCurso;
     }
 
+    
+
     public Profesor(int idProfesor, String nombre, String apellido, String dni, String genero, String email,
-            String telefono, String celular, String direccion, double sueldo) {
+            String telefono, String celular, String direccion, double sueldo, int idSede, int idCurso) {
         this.idProfesor = idProfesor;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -45,6 +53,45 @@ public class Profesor {
         this.celular = celular;
         this.direccion = direccion;
         this.sueldo = sueldo;
+        this.idSede = idSede;
+        this.idCurso = idCurso;
+    }
+
+    public Profesor(String nombre, String apellido, String dni, String genero, String email, String telefono,
+            String celular, String direccion, double sueldo, int idSede, String nombreSede, int idCurso,
+            String nombreCurso) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.genero = genero;
+        this.email = email;
+        this.telefono = telefono;
+        this.celular = celular;
+        this.direccion = direccion;
+        this.sueldo = sueldo;
+        this.idSede = idSede;
+        this.nombreSede = nombreSede;
+        this.idCurso = idCurso;
+        this.nombreCurso = nombreCurso;
+    }
+
+    public Profesor(int idProfesor, String nombre, String apellido, String dni, String genero, String email,
+            String telefono, String celular, String direccion, double sueldo, int idSede, String nombreSede,
+            int idCurso, String nombreCurso) {
+        this.idProfesor = idProfesor;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.genero = genero;
+        this.email = email;
+        this.telefono = telefono;
+        this.celular = celular;
+        this.direccion = direccion;
+        this.sueldo = sueldo;
+        this.idSede = idSede;
+        this.nombreSede = nombreSede;
+        this.idCurso = idCurso;
+        this.nombreCurso = nombreCurso;
     }
 
     public int getIdProfesor() {
@@ -127,10 +174,43 @@ public class Profesor {
         this.sueldo = sueldo;
     }
 
+    public int getIdSede() {
+        return idSede;
+    }
+
+    public void setIdSede(int idSede) {
+        this.idSede = idSede;
+    }
+
+    public String getNombreSede() {
+        return nombreSede;
+    }
+
+    public void setNombreSede(String nombreSede) {
+        this.nombreSede = nombreSede;
+    }
+
+    public int getIdCurso() {
+        return idCurso;
+    }
+
+    public void setIdCurso(int idCurso) {
+        this.idCurso = idCurso;
+    }
+
+    public String getNombreCurso() {
+        return nombreCurso;
+    }
+
+    public void setNombreCurso(String nombreCurso) {
+        this.nombreCurso = nombreCurso;
+    }
+
     @Override
     public String toString() {
-        return "Profesor [apellido=" + apellido + ", celular=" + celular + ", direccion=" + direccion + ", dni=" + dni
-                + ", email=" + email + ", genero=" + genero + ", idProfesor=" + idProfesor + ", nombre=" + nombre
-                + ", sueldo=" + sueldo + ", telefono=" + telefono + "]";
+        return "Profesor [idProfesor=" + idProfesor + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni
+                + ", genero=" + genero + ", email=" + email + ", telefono=" + telefono + ", celular=" + celular
+                + ", direccion=" + direccion + ", sueldo=" + sueldo + ", idSede=" + idSede + ", nombreSede="
+                + nombreSede + ", idCurso=" + idCurso + ", nombreCurso=" + nombreCurso + "]";
     }
 }

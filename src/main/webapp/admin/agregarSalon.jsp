@@ -22,7 +22,7 @@
                         <option selected value=""></option>
                         <!--INICIO ITERACION DE CADA ELEMENTO DE LA LISTA DE SEDES-->
                         <c:forEach var="sede" items="${sedes}">
-                            <option value="${sede.idSede}">${sede.direccion}</option>
+                            <option value="${sede.idSede}">${sede.nombre}</option>
                         </c:forEach><!--FIN ITERACION DE CADA ELEMENTO DE LA LISTA DE SEDES-->
                     </select>
                 </div>

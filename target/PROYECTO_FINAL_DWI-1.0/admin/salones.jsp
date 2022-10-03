@@ -10,10 +10,10 @@
     <div class="informacion notas">
         <div class="funciones-profesor">
             <div class="mensaje-export">
-                <a href="${pageContext.request.contextPath}/ServletControladorSalon?accion=listarSedes" class="boton-verde-radio-inline"><i class="fa-solid fa-fort"></i><h6>Agregar Salon</h6></a>
+                <a href="${pageContext.request.contextPath}/ServletControladorSalon?accion=listarSedes" class="boton-verde-radio-inline"><i class="fa-solid fa-user-plus"></i><h6>Agregar Salon</h6></a>
             </div>
             
-            <h6>Total de Salones: ${totalSalones}</h6><!--Ca mbiar el numero al conectar a una BD-->
+            <h6>Total de Registros: ${totalSalones}</h6><!--Cambiar el numero al conectar a una BD-->
         </div>
 
         <div class="tabla t-profesores">
@@ -21,21 +21,19 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Codigo</th>
                         <th>Sede</th>
                         <th>Grado</th>
                         <th>Seccion</th>
-                        <th>Nro Maximo de Estudiantes</th>
+                        <th>Nro Max de Estudiantes</th>
                         <th>Opcion</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!--INICIO ITERACION DE CADA ELEMENTO DE LA LISTA DE SALONES-->
+                    <!--INICIO ITERACION DE CADA ELEMENTO DE LA LISTA DE PROFESORES-->
                     <c:forEach var="salon" items="${salones}">
                         <tr>
                             <td>${salon.idSalon}</td>
-                            <td>${salon.codigoSalon}</td>
-                            <td>${salon.idSede}</td>
+                            <td>${salon.nombreSede}</td>
                             <td>${salon.grado}</td>
                             <td>${salon.seccion}</td>
                             <td>${salon.nroMax}</td>
@@ -47,7 +45,7 @@
                                 </a>
                             </td>
                         </tr>
-                    </c:forEach><!--FIN ITERACION DE CADA ELEMENTO DE LA LISTA DE SALONES-->
+                    </c:forEach><!--FIN ITERACION DE CADA ELEMENTO DE LA LISTA DE PROFESORES-->
                 </tbody>
             </table>
         </div>

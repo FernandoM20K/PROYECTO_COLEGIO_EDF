@@ -11,7 +11,7 @@
         <div class="funciones-profesor">
             <div class="mensaje-export">
                 <a href="${pageContext.request.contextPath}/ServletControladorProfesor" class="boton-morado-radio-inline"><i class="fa-solid fa-ban"></i><h6>Cancelar</h6></a>
-                <a href="${pageContext.request.contextPath}/ServletControladorProfesor?accion=eliminar&idProfesor=${profesor.idProfesor}" class="boton-rojo-radio-inline"><i class="fas fa-trash"></i><h6>Eliminar Cliente</h6></a>
+                <a href="${pageContext.request.contextPath}/ServletControladorProfesor?accion=eliminar&idProfesor=${profesor.idProfesor}" class="boton-rojo-radio-inline"><i class="fas fa-trash"></i><h6>Eliminar Profesor</h6></a>
             </div>
         </div>
 

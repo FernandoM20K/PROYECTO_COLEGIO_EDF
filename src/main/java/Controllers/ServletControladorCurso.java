@@ -36,10 +36,10 @@ public class ServletControladorCurso extends HttpServlet{
         if(accion != null) {
             switch(accion) {
                 case "insertar": 
-                    this.insertarProfesor(request, response);
+                    this.insertarCurso(request, response);
                     break;
                 case "modificar":
-                    this.modificarProfesor(request, response);
+                    //this.modificarProfesor(request, response);
                     break;
                 default: 
                     this.accionDefault(request, response);
@@ -59,6 +59,21 @@ public class ServletControladorCurso extends HttpServlet{
         //request.getRequestDispatcher("clientes.jsp").forward(request, response);
     }
 
+    private void insertarCurso(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+        //RECUPERAMOS LOS VALORES DEL FORMULARIO AGREGARCURSO
+        String nombre = request.getParameter("nombre");
+        int horasAcademicas = Integer.parseInt(request.getParameter("horasAcademicas"));
+
+        //CRREAMOS EL OBJETO CURSO (MODELO)
+        Curso curso = new Curso(nombre, horasAcademicas);
+        //INSERTAR EN LA BASE DE DATOS
+        int registrosModificados = new CursoDAO().insertar(curso);
+        System.out.println("Registros Modificados"+ registrosModificados);
+
+        //REDIRIGIMOS HACIA LA ACCION POR DEFAULT
+        this.accionDefault(request, response);
+    }
+
 
     private void editarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         //RECUPERAR EL ID PROFESOR
@@ -67,53 +82,6 @@ public class ServletControladorCurso extends HttpServlet{
         request.setAttribute("profesor", profesor);
         String jspEditar = "admin/editarProfesor.jsp";
         request.getRequestDispatcher(jspEditar).forward(request, response);
-    }
-
-
-    private void insertarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
-        //RECUPERAMOS LOS VALORES DEL FORMULARIO AGREGARPROFESOR
-        String nombre = request.getParameter("nombresProfesor");
-        String apellido = request.getParameter("apellidosProfesor");
-        String dni = request.getParameter("dniProfesor");
-        String direccion = request.getParameter("direccionProfesor");
-        String email = request.getParameter("emailProfesor");
-        String genero = request.getParameter("generoProfesor");
-        String telefono = request.getParameter("telefonoProfesor");
-        String celular = request.getParameter("celularProfesor");
-        Double sueldo = Double.parseDouble(request.getParameter("sueldoProfesor"));
-
-        //CRREAMOS EL OBJETO PROFESOR (MODELO)
-        Profesor profesor = new Profesor(nombre, apellido, dni, genero, email, telefono, celular, direccion, sueldo);
-        //INSERTAR EN LA BASE DE DATOS
-        int registrosModificados = new ProfesorDAO().insertar(profesor);
-        System.out.println("Registros Modificados"+ registrosModificados);
-
-        //REDIRIGIMOS HACIA LA ACCION POR DEFAULT
-        this.accionDefault(request, response);
-    }
-
-    private void modificarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
-        //RECUPERAMOS LOS VALORES DEL FORMULARIO AGREGARPROFESOR
-        int idProfesor = Integer.parseInt(request.getParameter("idProfesor"));
-        String nombre = request.getParameter("nombresProfesor");
-        String apellido = request.getParameter("apellidosProfesor");
-        String dni = request.getParameter("dniProfesor");
-        String direccion = request.getParameter("direccionProfesor");
-        String email = request.getParameter("emailProfesor");
-        String genero = request.getParameter("generoProfesor");
-        String telefono = request.getParameter("telefonoProfesor");
-        String celular = request.getParameter("celularProfesor");
-        Double sueldo = Double.parseDouble(request.getParameter("sueldoProfesor"));
-
-        //CRREAMOS EL OBJETO PROFESOR (MODELO)
-        Profesor profesor = new Profesor(idProfesor, nombre, apellido, dni, genero, email, telefono, celular, direccion, sueldo);
-
-        //MODIFICAR EL OBJETO EN LA BASE DE DATOS
-        int registrosModificados = new ProfesorDAO().actualizar(profesor);
-        System.out.println("Registros Modificados"+ registrosModificados);
-
-        //REDIRIGIMOS HACIA LA ACCION POR DEFAULT
-        this.accionDefault(request, response);
     }
 
     private void eliminarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {

@@ -2,6 +2,7 @@ package Entidades;
 
 public class Sede {
     private int idSede;
+    private String nombre;
     private String direccion;
     private String telefono;
 
@@ -13,8 +14,9 @@ public class Sede {
         this.idSede = idSede;
     }
 
-    public Sede(int idSede, String direccion, String telefono) {
+    public Sede(int idSede, String nombre, String direccion, String telefono) {
         this.idSede = idSede;
+        this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
     }
@@ -25,6 +27,14 @@ public class Sede {
 
     public void setIdSede(int idSede) {
         this.idSede = idSede;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDireccion() {
@@ -45,6 +55,7 @@ public class Sede {
 
     @Override
     public String toString() {
-        return "Sedes [direccion=" + direccion + ", idSede=" + idSede + ", telefono=" + telefono + "]";
-    } 
+        return "Sede [idSede=" + idSede + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
+                + "]";
+    }  
 }

@@ -12,7 +12,7 @@
     <div class="informacion notas">
         <div class="funciones-profesor">
             <div class="mensaje-export">
-                <a href="AgregarProfesor.jsp" class="boton-verde-radio-inline"><i class="fa-solid fa-user-plus"></i><h6>Agregar Profesor</h6></a>
+                <a href="${pageContext.request.contextPath}/ServletControladorProfesor?accion=agregarRegistro" class="boton-verde-radio-inline"><i class="fa-solid fa-user-plus"></i><h6>Agregar Profesor</h6></a>
             </div>
             
             <h6>Total de Registros: ${totalProfesores}</h6><!--Cambiar el numero al conectar a una BD-->
@@ -26,6 +26,8 @@
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>DNI</th>
+                        <th>Sede</th>
+                        <th>Curso</th>
                         <th>Genero</th>
                         <th>Email</th>
                         <th>Telefono</th>
@@ -43,6 +45,8 @@
                             <td>${profesor.nombre}</td>
                             <td>${profesor.apellido}</td>
                             <td>${profesor.dni}</td>
+                            <td>${profesor.nombreSede}</td>
+                            <td>${profesor.nombreCurso}</td>
                             <td>${profesor.genero}</td>
                             <td>${profesor.email}</td>
                             <td>${profesor.telefono}</td>

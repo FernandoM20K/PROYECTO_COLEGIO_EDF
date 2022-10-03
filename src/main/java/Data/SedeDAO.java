@@ -6,13 +6,13 @@ import java.util.List;
 import Entidades.Sede;
 
 public class SedeDAO {
-    private static final String SQL_SELECT = "SELECT ID_SEDE, DIRECCION, TELEFONO FROM TB_SEDES";
+    private static final String SQL_SELECT = "SELECT ID_SEDE, NOMBRE, DIRECCION, TELEFONO FROM TB_SEDES";
 
-    private static final String SQL_SELECT_BY_ID = "SELECT ID_SEDE, DIRECCION, TELEFONO FROM TB_SEDES WHERE ID_SEDE = ?";
+    private static final String SQL_SELECT_BY_ID = "SELECT ID_SEDE, NOMBRE, DIRECCION, TELEFONO FROM TB_SEDES WHERE ID_SEDE = ?";
 
-    private static final String SQL_INSERT = "INSERT INTO TB_SEDES(DIRECCION, TELEFONO) VALUES(?,?)";
+    private static final String SQL_INSERT = "INSERT INTO TB_SEDES(NOMBRE, DIRECCION, TELEFONO) VALUES(?,?,?)";
 
-    private static final String SQL_UPDATE = "UPDATE TB_SEDES SET DIRECCION = ?, TELEFONO=? WHERE ID_SEDE=?";
+    private static final String SQL_UPDATE = "UPDATE TB_SEDES SET NOMBRE=?, DIRECCION=?, TELEFONO=? WHERE ID_SEDE=?";
 
     private static final String SQL_DELETE = "DELETE FROM TB_SEDES WHERE ID_SEDE=?";
 
@@ -29,10 +29,11 @@ public class SedeDAO {
             rs = stmt.executeQuery();
             while(rs.next()) {
                 int id_sede = rs.getInt("ID_SEDE");
+                String nombre = rs.getString("NOMBRE");
                 String direccion = rs.getString("DIRECCION");
                 String telefono = rs.getString("TELEFONO");
 
-                sede = new Sede(id_sede, direccion, telefono);
+                sede = new Sede(id_sede, nombre, direccion, telefono);
                 sedes.add(sede);
             }
         } catch (SQLException e) {
@@ -58,9 +59,11 @@ public class SedeDAO {
             rs = stmt.executeQuery();
             rs.next(); //NOS POSICIONAMOS EN EL PRIMER REGISTRO
 
+            String nombre = rs.getString("NOMBRE");
             String direccion = rs.getString("DIRECCION");
             String telefono = rs.getString("TELEFONO");
 
+            sede.setNombre(nombre);
             sede.setDireccion(direccion);
             sede.setTelefono(telefono);
 
@@ -82,8 +85,9 @@ public class SedeDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setString(1, sede.getDireccion());
-            stmt.setString(2, sede.getTelefono());
+            stmt.setString(1, sede.getNombre());
+            stmt.setString(2, sede.getDireccion());
+            stmt.setString(3, sede.getTelefono());
 
             rows = stmt.executeUpdate();
 
@@ -104,9 +108,10 @@ public class SedeDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setString(1, sede.getDireccion());
-            stmt.setString(2, sede.getTelefono());
-            stmt.setInt(3, sede.getIdSede());
+            stmt.setString(1, sede.getNombre());
+            stmt.setString(2, sede.getDireccion());
+            stmt.setString(3, sede.getTelefono());
+            stmt.setInt(4, sede.getIdSede());
 
             rows = stmt.executeUpdate();
 

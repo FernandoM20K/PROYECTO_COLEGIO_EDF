@@ -6,13 +6,13 @@ import java.util.List;
 import Entidades.Curso;
 
 public class CursoDAO {
-    private static final String SQL_SELECT = "SELECT ID_CURSO, NOMBRE_CURSO, HORAS_ACADEMICAS FROM TB_CURSOS";
+    private static final String SQL_SELECT = "SELECT ID_CURSO, NOMBRE, HORAS_ACADEMICAS FROM TB_CURSOS";
 
     private static final String SQL_SELECT_BY_ID = "SELECT ID_CURSO, NOMBRE_CURSO, HORAS_ACADEMICAS FROM TB_CURSOS WHERE ID_CURSO = ?";
 
-    private static final String SQL_INSERT = "INSERT INTO TB_CURSOS(NOMBRE_CURSO, HORAS_ACADEMICAS) VALUES(?,?)";
+    private static final String SQL_INSERT = "INSERT INTO TB_CURSOS(NOMBRE, HORAS_ACADEMICAS) VALUES(?,?)";
 
-    private static final String SQL_UPDATE = "UPDATE TB_CURSOS SET NOMBRE_CURSO=?, HORAS_ACADEMICAS=? WHERE ID_CURSO=?";
+    private static final String SQL_UPDATE = "UPDATE TB_CURSOS SET NOMBRE=?, HORAS_ACADEMICAS=? WHERE ID_CURSO=?";
 
     private static final String SQL_DELETE = "DELETE FROM TB_CURSOS WHERE ID_CURSO=?";
 
@@ -29,7 +29,7 @@ public class CursoDAO {
             rs = stmt.executeQuery();
             while(rs.next()) {
                 int idCurso = rs.getInt("ID_CURSO");
-                String nombre = rs.getString("NOMBRE_CURSO");
+                String nombre = rs.getString("NOMBRE");
                 int horasAcademicas = rs.getInt("HORAS_ACADEMICAS");
 
                 curso = new Curso(idCurso, nombre, horasAcademicas);
@@ -58,10 +58,10 @@ public class CursoDAO {
             rs = stmt.executeQuery();
             rs.next(); //NOS POSICIONAMOS EN EL PRIMER REGISTRO
 
-            String nombre = rs.getString("NOMBRE_CURSO");
+            String nombre = rs.getString("NOMBRE");
             int horasAcademicas = rs.getInt("HORAS_ACADEMICAS");
 
-            curso.setNombreCurso(nombre);
+            curso.setNombre(nombre);
             curso.setHorasAcademicas(horasAcademicas);
 
         } catch (SQLException e) {
@@ -82,7 +82,7 @@ public class CursoDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setString(1, curso.getNombreCurso());
+            stmt.setString(1, curso.getNombre());
             stmt.setInt(2, curso.getHorasAcademicas());
 
             rows = stmt.executeUpdate();
@@ -104,7 +104,7 @@ public class CursoDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setString(1, curso.getNombreCurso());
+            stmt.setString(1, curso.getNombre());
             stmt.setInt(2, curso.getHorasAcademicas());
             stmt.setInt(3, curso.getIdCurso());
 

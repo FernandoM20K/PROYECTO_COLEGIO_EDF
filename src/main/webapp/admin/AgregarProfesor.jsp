@@ -32,6 +32,28 @@
                         <input type="number" id="dniProfesor" name="dniProfesor" class="block-100" required>
                     </div>
                 </div>
+
+                <div>
+                    <label for="idSede">Sede</label>
+                    <select id="idSede" name="idSede" class="block-100" required>
+                        <option selected value=""></option>
+                        <!--INICIO ITERACION DE CADA ELEMENTO DE LA LISTA DE SEDES-->
+                        <c:forEach var="sede" items="${sedes}">
+                            <option value="${sede.idSede}">${sede.nombre}</option>
+                        </c:forEach><!--FIN ITERACION DE CADA ELEMENTO DE LA LISTA DE SEDES-->
+                    </select>
+                </div>
+
+                <div>
+                    <label for="idCurso">Curso</label>
+                    <select id="idCurso" name="idCurso" class="block-100" required>
+                        <option selected value=""></option>
+                        <!--INICIO ITERACION DE CADA ELEMENTO DE LA LISTA DE CURSOS-->
+                        <c:forEach var="curso" items="${cursos}">
+                            <option value="${curso.idCurso}">${curso.nombre}</option>
+                        </c:forEach><!--FIN ITERACION DE CADA ELEMENTO DE LA LISTA DE CURSOS-->
+                    </select>
+                </div>
     
                 <div>
                     <label for="direccionProfesor">Direccion</label>

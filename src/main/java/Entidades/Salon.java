@@ -2,8 +2,8 @@ package Entidades;
 
 public class Salon {
     private int idSalon;
-    private String codigoSalon;
     private int idSede;
+    private String nombreSede;
     private String grado;
     private String seccion;
     private int nroMax;
@@ -23,18 +23,10 @@ public class Salon {
         this.nroMax = nroMax;
     }
 
-    public Salon(String codigoSalon, int idSede, String grado, String seccion, int nroMax) {
-        this.codigoSalon = codigoSalon;
-        this.idSede = idSede;
-        this.grado = grado;
-        this.seccion = seccion;
-        this.nroMax = nroMax;
-    }
-
-    public Salon(int idSalon, String codigoSalon, int idSede, String grado, String seccion, int nroMax) {
+    public Salon(int idSalon, int idSede, String nombreSede, String grado, String seccion, int nroMax) {
         this.idSalon = idSalon;
-        this.codigoSalon = codigoSalon;
         this.idSede = idSede;
+        this.nombreSede = nombreSede;
         this.grado = grado;
         this.seccion = seccion;
         this.nroMax = nroMax;
@@ -48,20 +40,20 @@ public class Salon {
         this.idSalon = idSalon;
     }
 
-    public String getCodigoSalon() {
-        return codigoSalon;
-    }
-
-    public void setCodigoSalon(String codigoSalon) {
-        this.codigoSalon = codigoSalon;
-    }
-
     public int getIdSede() {
         return idSede;
     }
 
     public void setIdSede(int idSede) {
         this.idSede = idSede;
+    }
+
+    public String getNombreSede() {
+        return nombreSede;
+    }
+
+    public void setNombreSede(String nombreSede) {
+        this.nombreSede = nombreSede;
     }
 
     public String getGrado() {
@@ -90,7 +82,7 @@ public class Salon {
 
     @Override
     public String toString() {
-        return "SalonDAO [idSalon=" + idSalon + ", codigoSalon=" + codigoSalon + ", idSede=" + idSede + ", grado="
-                + grado + ", seccion=" + seccion + ", nroMax=" + nroMax + "]";
+        return "Salon [idSalon=" + idSalon + ", idSede=" + idSede + ", nombreSede=" + nombreSede + ", grado=" + grado
+                + ", seccion=" + seccion + ", nroMax=" + nroMax + "]";
     }
 }

@@ -13,6 +13,7 @@
                 <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Nombre</th>
                         <th>Direccion</th>
                         <th>Telefono</th>
                         <th>Opciones</th>
@@ -24,6 +25,7 @@
                     <c:forEach var="sede" items="${sedes}">
                         <tr>
                             <td>${sede.idSede}</td>
+                            <td>${sede.nombre}</td>
                             <td>${sede.direccion}</td>
                             <td>${sede.telefono}</td>
                             <td>

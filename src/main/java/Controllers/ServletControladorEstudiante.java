@@ -1,27 +1,30 @@
 package Controllers;
 
 import java.util.List;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import Data.CursoDAO;
+import Data.EstudianteDAO;
 import Data.ProfesorDAO;
 import Data.SedeDAO;
 import Entidades.Curso;
+import Entidades.Estudiante;
 import Entidades.Profesor;
 import Entidades.Sede;
 
-@WebServlet("/ServletControladorProfesor")
-public class ServletControladorProfesor extends HttpServlet{
+@WebServlet("/ServletControladorEstudiante")
+public class ServletControladorEstudiante extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         String accion = request.getParameter("accion");
         if(accion != null) {
             switch(accion) {
                 case "editar": 
-                    this.editarProfesor(request, response);
+                    this.editarEstudiante(request, response);
                     break;
                 case "eliminar":
-                    this.eliminarProfesor(request, response);
+                    this.eliminarEstudiante(request, response);
                     break;
                 case "agregarRegistro":
                     this.agregarRegistro(request, response);
@@ -40,10 +43,10 @@ public class ServletControladorProfesor extends HttpServlet{
         if(accion != null) {
             switch(accion) {
                 case "insertar": 
-                    this.insertarProfesor(request, response);
+                    this.insertarEstudiante(request, response);
                     break;
                 case "modificar":
-                    this.modificarProfesor(request, response);
+                    this.modificarEstudiante(request, response);
                     break;
                 default: 
                     this.accionDefault(request, response);
@@ -54,12 +57,12 @@ public class ServletControladorProfesor extends HttpServlet{
     }
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
-        List<Profesor> profesores = new ProfesorDAO().listar();
-        System.out.println("profesores" + profesores);
+        List<Estudiante> estudiantes = new EstudianteDAO().listar();
+        System.out.println("estudiantes" + estudiantes);
         HttpSession sesion = request.getSession();
-        sesion.setAttribute("totalProfesores", profesores.size());
-        sesion.setAttribute("profesores", profesores);
-        response.sendRedirect("admin/profesores.jsp");
+        sesion.setAttribute("totalEstudiantes", estudiantes.size());
+        sesion.setAttribute("estudiantes", estudiantes);
+        response.sendRedirect("admin/estudiantes.jsp");
         //request.getRequestDispatcher("clientes.jsp").forward(request, response);
     }
 
@@ -77,7 +80,7 @@ public class ServletControladorProfesor extends HttpServlet{
         request.getRequestDispatcher("admin/AgregarProfesor.jsp").forward(request, response);
     }
 
-    private void editarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+    private void editarEstudiante(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         //RECUPERAR EL ID PROFESOR
         int idProfesor = Integer.parseInt(request.getParameter("idProfesor"));
         Profesor profesor = new ProfesorDAO().encontrar(new Profesor(idProfesor));
@@ -87,7 +90,7 @@ public class ServletControladorProfesor extends HttpServlet{
     }
 
 
-    private void insertarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+    private void insertarEstudiante(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         //RECUPERAMOS LOS VALORES DEL FORMULARIO AGREGARPROFESOR
         String nombre = request.getParameter("nombresProfesor");
         String apellido = request.getParameter("apellidosProfesor");
@@ -111,7 +114,7 @@ public class ServletControladorProfesor extends HttpServlet{
         this.accionDefault(request, response);
     }
 
-    private void modificarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+    private void modificarEstudiante(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         //RECUPERAMOS LOS VALORES DEL FORMULARIO AGREGARPROFESOR
         int idProfesor = Integer.parseInt(request.getParameter("idProfesor"));
         String nombre = request.getParameter("nombresProfesor");
@@ -137,7 +140,7 @@ public class ServletControladorProfesor extends HttpServlet{
         this.accionDefault(request, response);
     }
 
-    private void eliminarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+    private void eliminarEstudiante(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         //RECUPERAMOS LOS VALORES DEL FORMULARIO AGREGARPROFESOR
         int idProfesor = Integer.parseInt(request.getParameter("idProfesor"));
 
@@ -152,7 +155,3 @@ public class ServletControladorProfesor extends HttpServlet{
         this.accionDefault(request, response);
     }
 }
-
-/**********************************************************************************************/
-/* SERVLETCONTROLADORPROFESOR COMPLETADO CON EXITO - VERSION FINAL DEL ARCHIVO DE EL PROYECTO */
-/**********************************************************************************************/

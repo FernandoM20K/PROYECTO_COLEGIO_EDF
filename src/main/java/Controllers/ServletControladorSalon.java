@@ -102,26 +102,7 @@ public class ServletControladorSalon extends HttpServlet{
 
     private void modificarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         //RECUPERAMOS LOS VALORES DEL FORMULARIO AGREGARPROFESOR
-        int idProfesor = Integer.parseInt(request.getParameter("idProfesor"));
-        String nombre = request.getParameter("nombresProfesor");
-        String apellido = request.getParameter("apellidosProfesor");
-        String dni = request.getParameter("dniProfesor");
-        String direccion = request.getParameter("direccionProfesor");
-        String email = request.getParameter("emailProfesor");
-        String genero = request.getParameter("generoProfesor");
-        String telefono = request.getParameter("telefonoProfesor");
-        String celular = request.getParameter("celularProfesor");
-        Double sueldo = Double.parseDouble(request.getParameter("sueldoProfesor"));
-
-        //CRREAMOS EL OBJETO PROFESOR (MODELO)
-        Profesor profesor = new Profesor(idProfesor, nombre, apellido, dni, genero, email, telefono, celular, direccion, sueldo);
-
-        //MODIFICAR EL OBJETO EN LA BASE DE DATOS
-        int registrosModificados = new ProfesorDAO().actualizar(profesor);
-        System.out.println("Registros Modificados"+ registrosModificados);
-
-        //REDIRIGIMOS HACIA LA ACCION POR DEFAULT
-        this.accionDefault(request, response);
+        
     }
 
     private void eliminarProfesor(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {

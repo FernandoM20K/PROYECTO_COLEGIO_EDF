@@ -6,13 +6,13 @@ import java.util.List;
 import Entidades.Salon;
 
 public class SalonDAO {
-    private static final String SQL_SELECT = "SELECT ID_SALON, CODIGO_SALON, ID_SEDE, GRADO, SECCION, NRO_MAX FROM TB_SALONES";
+    private static final String SQL_SELECT = "SELECT TSA.ID_SALON, TSA.ID_SEDE, TSE.NOMBRE, TSA.GRADO, TSA.SECCION, TSA.NRO_MAX FROM TB_SALONES TSA INNER JOIN TB_SEDES TSE ON TSA.ID_SEDE=TSE.ID_SEDE";
 
-    private static final String SQL_SELECT_BY_ID = "SELECT ID_SALON, CODIGO_SALON, ID_SEDE, GRADO, SECCION, NRO_MAX FROM TB_SALONES WHERE ID_SALONES = ?";
+    private static final String SQL_SELECT_BY_ID = "SELECT ID_SALON, ID_SEDE, GRADO, SECCION, NRO_MAX FROM TB_SALONES WHERE ID_SALONES = ?";
 
     private static final String SQL_INSERT = "INSERT INTO TB_SALONES(ID_SEDE, GRADO, SECCION, NRO_MAX) VALUES(?,?,?,?)";
 
-    private static final String SQL_UPDATE = "UPDATE TB_SALONES SET GRADO, SECCION, NRO_MAX WHERE ID_SALON=?";
+    private static final String SQL_UPDATE = "UPDATE TB_SALONES SET GRADO=?, SECCION=?, NRO_MAX=? WHERE ID_SALON=?";
 
     private static final String SQL_DELETE = "DELETE FROM TB_SALONES WHERE ID_SALON=?";
 
@@ -28,14 +28,14 @@ public class SalonDAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while(rs.next()) {
-                int idSalon = rs.getInt("ID_SALON");
-                String codigoSalon = rs.getString("CODIGO_SALON");
-                int idSede = rs.getInt("ID_SEDE");
-                String grado = rs.getString("GRADO");
-                String seccion = rs.getString("SECCION");
-                int nroMax = rs.getInt("NRO_MAX");
+                int idSalon = rs.getInt(1);
+                int idSede = rs.getInt(2);
+                String nombreSede = rs.getString(3);
+                String grado = rs.getString(4);
+                String seccion = rs.getString(5);
+                int nroMax = rs.getInt(6);
 
-                salon = new Salon(idSalon, codigoSalon, idSede, grado, seccion, nroMax);
+                salon = new Salon(idSalon, idSede, nombreSede, grado, seccion, nroMax);
                 salones.add(salon);
             }
         } catch (SQLException e) {
@@ -61,13 +61,11 @@ public class SalonDAO {
             rs = stmt.executeQuery();
             rs.next(); //NOS POSICIONAMOS EN EL PRIMER REGISTRO
 
-            String codigoSalon = rs.getString("CODIGO_SALON");
             int idSede = rs.getInt("ID_SEDE");
             String grado = rs.getString("GRADO");
             String seccion = rs.getString("SECCION");
             int nroMax = rs.getInt("NRO_MAX");
 
-            salon.setCodigoSalon(codigoSalon);
             salon.setIdSede(idSede);
             salon.setGrado(grado);
             salon.setSeccion(seccion);
@@ -115,11 +113,10 @@ public class SalonDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setInt(1, salon.getIdSede());
-            stmt.setString(2, salon.getGrado());
-            stmt.setString(3, salon.getSeccion());
-            stmt.setInt(4, salon.getNroMax());
-            stmt.setInt(5, salon.getIdSalon());
+            stmt.setString(1, salon.getGrado());
+            stmt.setString(2, salon.getSeccion());
+            stmt.setInt(3, salon.getNroMax());
+            stmt.setInt(4, salon.getIdSalon());
 
             rows = stmt.executeUpdate();
 
@@ -153,3 +150,7 @@ public class SalonDAO {
         return rows;
     } /* FIN METODO ELIMINAR SALON */
 }
+
+/****************************************************************************/
+/* SALONDAO COMPLETADO CON EXITO - VERSION FINAL DEL ARCHIVO DE EL PROYECTO */
+/****************************************************************************/
